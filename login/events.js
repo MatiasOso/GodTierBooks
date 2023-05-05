@@ -30,17 +30,20 @@ class UI{
         document.getElementById('register').reset();
     }
     showMessage(message, cssClass){
+        const card = document.querySelector('.card');
         const div = document.createElement('div');
         div.className = `alert alert-success ${cssClass}`;
-        div.appendChild(document.createTextNode('Usuario registrado'));
-        // Mostrando en el DOM
-        const container = document.querySelector('.container');
-        const app = document.querySelector('#App');
-        container.insertBefore(div, app);
+        div.appendChild(document.createTextNode(message));
+        card.parentNode.insertBefore(div, card);
+        div.style.position = 'fixed';
+        div.style.top = '0';
+        div.style.left = '50%';
+        div.style.transform = 'translate(-50%, 0)';
         setTimeout(function(){
-            document.querySelector('.alert').remove();
+          div.remove();
         }, 3000);
-    }
+      }
+      
 
 
 }
