@@ -10,31 +10,65 @@
     <title>Login</title>
 </head>
 <body class="bg-dark">
-  <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
-    <div class="card hidden" style="width: 18rem;">
-      <ul class="list-group list-group-flush">
+  <div class="container">
+    <div class="App">
+    <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <h4>Registro</h4>
+        </div>
+        <form id="register" class="card-body">
+          <div class="from-group">
+            <input type="text" class="form-control form-control-lg mb-2" id="nombre" placeholder="Nombre">
+          </div>
+          <div class="from-group">
+            <input type="email" class="form-control form-control-lg mb-2" id="email" placeholder="Correo electrónico">
+          </div>
+          <div class="from-group">
+            <input type="date" class="form-control form-control-lg mb-2" id="fec" min="1900" max="2023" placeholder="Correo electrónico">
+          </div>
+          <div class="from-group">
+            <input type="password" class="form-control form-control-lg mb-2" id="password1" placeholder="Contraseña">
+          </div>
+          <div class="from-group">
+            <input type="password" class="form-control form-control-lg mb-2" id="password2" placeholder="Confirmar contraseña">
+          </div>
+          <div class="card-footer d-flex justify-content-between mt-auto" style="margin-bottom: 0;">
+            <input type="submit" value="Registrarse" class="btn btn-primary btn-block text-center">
+            <!-- <a class="btn btn-primary btn-lg" type="submit" value="save">Registrarse</a> -->
+            <a class="btn btn-secondary btn-lg" id="btn-volver" href="login.html" >Volver</a>
+          </div>   
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+    <div id="Registro" class="col-md-8"></div>
+      
+      
+      
+      
+      
+      <!-- <ul class="list-group list-group-flush" id="register">
         <li class="list-group-item h4">Registro</li>
         <li class="list-group-item">
           <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Nombre">
         </li>
         <li class="list-group-item">
-          <input type="email" class="form-control form-control-lg" id="correo" placeholder="Correo electrónico">
+          <input type="email" class="form-control form-control-lg" id="email" placeholder="Correo electrónico">
         </li>
         <li class="list-group-item">Fecha de nacimiento
-          <input type="date" class="form-control form-control-lg" id="correo" placeholder="Correo electrónico">
+          <input type="date" class="form-control form-control-lg" id="fec" min="1900" max="2023" placeholder="Correo electrónico">
         </li>
         <li class="list-group-item">
-          <input type="password" class="form-control form-control-lg" id="password" placeholder="Contraseña">
+          <input type="password" class="form-control form-control-lg" id="password1" placeholder="Contraseña">
         </li>
         <li class="list-group-item">
-          <input type="password" class="form-control form-control-lg" id="password" placeholder="Contraseña">
+          <input type="password" class="form-control form-control-lg" id="password2" placeholder="Contraseña">
         </li>
-      </ul>
-      <div class="card-footer d-flex justify-content-between mt-auto" style="margin-bottom: 0;">
-          <a class="btn btn-primary btn-lg">Registrarse</a>
-          <a class="btn btn-secondary btn-lg" id="btn-volver" href="login.html" >Volver</a>
-      </div>     
-    </div>
-  </div>
+      </ul> -->
+        
+    
+  <script src="events.js"></script>
 </body>
 </html>
