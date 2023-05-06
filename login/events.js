@@ -34,8 +34,7 @@ class UI{
 }
 
 // DOM Events
-document.getElementById('register')
-    .addEventListener('submit', function(e){
+document.getElementById('register').addEventListener('submit', function(e){
         const nombre = document.getElementById('nombre').value;
         const email = document.getElementById('email').value;
         const fec = document.getElementById('fec').value;
@@ -54,19 +53,6 @@ document.getElementById('register')
         e.preventDefault();
     });
 
-function login(){
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    if (email == "admin" && password == "admin"){
-        alert ("Login successfully");
-        window.location = "ingreso.html"; // Redirecting to other page.
-        return false;
-    }
-    else{
-        alert("Wrong username or password");
-        return false;
-    }
-}
 
 
 
