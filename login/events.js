@@ -8,24 +8,10 @@ class Register{
 
     }   
 }
+
+
 class UI{
-    // addUser(User){
-    //     const userList = document.getElementById('Registro');
-    //     const element = document.createElement('div');
-    //     element.innerHTML = `
-    //         <div class="card text-center mb-4">
-    //             <div class="card-body">
-    //                 <strong>Nombre/strong>: ${User.nombre}
-    //                 <strong>Email/strong>: ${User.email}
-    //                 <strong>Fecha de nacimiento/strong>: ${User.fec}
-    //                 <strong>Contraseña/strong>: ${User.password1}
-    //                 <strong>Repita su contraseña/strong>: ${User.password2}
-    //             </div>
-    //         </div>
-    //     `;
-    //     userList.appendChild(element);
-    //     this.resetForm();
-    // }
+
     resetForm(){
         document.getElementById('register').reset();
     }
@@ -44,8 +30,7 @@ class UI{
         }, 3000);
       }
       
-
-
+    
 }
 
 // DOM Events
@@ -68,3 +53,38 @@ document.getElementById('register')
 
         e.preventDefault();
     });
+
+function login(){
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    if (email == "admin" && password == "admin"){
+        alert ("Login successfully");
+        window.location = "ingreso.html"; // Redirecting to other page.
+        return false;
+    }
+    else{
+        alert("Wrong username or password");
+        return false;
+    }
+}
+
+
+
+
+    // addUser(User){
+    //     const userList = document.getElementById('Registro');
+    //     const element = document.createElement('div');
+    //     element.innerHTML = `
+    //         <div class="card text-center mb-4">
+    //             <div class="card-body">
+    //                 <strong>Nombre/strong>: ${User.nombre}
+    //                 <strong>Email/strong>: ${User.email}
+    //                 <strong>Fecha de nacimiento/strong>: ${User.fec}
+    //                 <strong>Contraseña/strong>: ${User.password1}
+    //                 <strong>Repita su contraseña/strong>: ${User.password2}
+    //             </div>
+    //         </div>
+    //     `;
+    //     userList.appendChild(element);
+    //     this.resetForm();
+    // }
