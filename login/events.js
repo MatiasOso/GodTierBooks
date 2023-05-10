@@ -8,10 +8,7 @@ class Register{
 
     }   
 }
-
-
 class UI{
-
     resetForm(){
         document.getElementById('register').reset();
     }
@@ -29,8 +26,6 @@ class UI{
           div.remove();
         }, 3000);
       }
-      
-    
 }
 
 // DOM Events
@@ -41,7 +36,11 @@ document.getElementById('register').addEventListener('submit', function(e){
         const password1 = document.getElementById('password1').value;
         const password2 = document.getElementById('password2').value;
         
-        
+        if(password1 != password2){
+            alert('Las contraseñas no coinciden');
+            e.preventDefault(); //evita que se envie el formulario
+        }
+        else{
         console.log(new Register(nombre, fec, email, password1, password2));
         const User = new Register(nombre, fec, email, password1, password2);
 
@@ -51,6 +50,7 @@ document.getElementById('register').addEventListener('submit', function(e){
         ui.showMessage('Usuario registrado', 'success');
 
         e.preventDefault();
+        }   
     });
 
 
