@@ -1,11 +1,15 @@
 class Product{
-    constructor(id,nombre,autor,cantidad,precio,imagen){
+    constructor(id,nombre,autor,cantidad,precio,editorial,fecha,genero,imagen,descripcion){
         this.id=id;
         this.nombre=nombre;
         this.autor=autor;
         this.cantidad=cantidad;
         this.precio=precio;
+        this.editorial=editorial;
+        this.fecha=fecha;
+        this.genero=genero;
         this.imagen=imagen;
+        this.descripcion=descripcion;
     }
 }
 
@@ -21,7 +25,11 @@ class UI {
                     <strong>Autor</strong>: ${product.autor}
                     <strong>Stock</strong>: ${product.cantidad}
                     <strong>Precio $</strong>: ${product.precio}
+                    <strong>Editorial</strong>: ${product.editorial}
+                    <strong>Fecha de Publicacion</strong>: ${product.fecha}
+                    <strong>Genero</strong>: ${product.genero}
                     <strong>Imagen</strong>: ${product.imagen}
+                    <strong>Descripcion</strong>: ${product.descripcion}
                     <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
                 </div>
             </div>
@@ -56,15 +64,20 @@ class UI {
 
 //DOM EVENTS
 document.getElementById('product-form').addEventListener('submit',function(e) {
-   const id = document.getElementById('id').value
-   const nombre = document.getElementById('name').value
-   const cantidad = document.getElementById('cantidad').value
-   const precio = document.getElementById('precio').value
-   const imagen = document.getElementById('imagen').value
+    const id = document.getElementById('id').value
+    const nombre = document.getElementById('name').value
+    const autor = document.getElementById('autor').value
+    const cantidad = document.getElementById('cantidad').value
+    const precio = document.getElementById('precio').value
+    const editorial = document.getElementById('editorial').value
+    const fecha = document.getElementById('year').value
+    const genero = document.getElementById('genero').value
+    const imagen = document.getElementById('imagen').value
+    const descripcion = document.getElementById('descripcion').value
 
     
 
-    const product =new Product(id,nombre,cantidad,precio,imagen);
+    const product =new Product(id,nombre,autor,cantidad,precio,editorial,fecha,genero,imagen,descripcion);
     const ui = new UI();
     ui.addProduct(product);
     ui.showMessage('Producto agregado', 'success');
