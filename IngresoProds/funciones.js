@@ -18,9 +18,8 @@ class UI {
     addProduct(product){
         const productList = document.getElementById('product-list');
         const element = document.createElement('div');
-        element.innerHTML = `
-        <div class="row">   
-        <div class="col">
+        element.innerHTML = `   
+            <div class="col">
                  <div class="card" style="width: 18rem;">
                      <img src="img/${product.imagen}" class="card-img-top" alt="...">
                      <div class="card-body">
