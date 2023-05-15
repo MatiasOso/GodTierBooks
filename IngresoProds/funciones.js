@@ -13,29 +13,76 @@ class Product{
     }
 }
 
+
 class UI {
     addProduct(product){
         const productList = document.getElementById('product-list');
         const element = document.createElement('div');
         element.innerHTML = `
-            <div class="card text-center mb-4">
-                <div class="card-body">
-                    <strong>ID/strong>: ${product.id}
-                    <strong>Nombre del Libro</strong>: ${product.nombre}
-                    <strong>Autor</strong>: ${product.autor}
-                    <strong>Stock</strong>: ${product.cantidad}
-                    <strong>Precio $</strong>: ${product.precio}
-                    <strong>Editorial</strong>: ${product.editorial}
-                    <strong>Fecha de Publicacion</strong>: ${product.fecha}
-                    <strong>Genero</strong>: ${product.genero}
-                    <strong>Imagen</strong>: ${product.imagen}
-                    <strong>Descripcion</strong>: ${product.descripcion}
-                    <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
-                </div>
-            </div>
+        <div class="row">   
+        <div class="col">
+                 <div class="card" style="width: 18rem;">
+                     <img src="img/${product.imagen}" class="card-img-top" alt="...">
+                     <div class="card-body">
+                       <ul>
+                       <strong>ID</strong>: ${product.id}
+                       <li><strong>Nombre del Libro</strong>: ${product.nombre}</li>
+                       <li><strong>Autor</strong>: ${product.autor}</li>
+                       <li><strong>Stock</strong>: ${product.cantidad}</li>
+                       <li><strong>Precio $</strong>: ${product.precio}</li>    <!-- ETIQUETA OFICIAL --> 
+                       <li><strong>Editorial</strong>: ${product.editorial}</li>
+                       <li><strong>Fecha de Publicacion</strong>: ${product.fecha}</li>
+                       <li><strong>Genero</strong>: ${product.genero}</li>
+                       <li><strong>Descripcion</strong>: ${product.descripcion}</li>
+                       </ul>
+                       <div class="card-footer">
+                       <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
+                       <div>
+                      </div>
+                    </div>
+              </div>
+            </div>       
         `;
         productList.appendChild(element);
         this.resetForm();
+        // window.addEventListener('load', () => {
+        //     fetch('https://g9cd7530b8a8613-ecommerce.adb.sa-santiago-1.oraclecloudapps.com/ords/inacap_ecommerce/libros_osores/')
+        //     .then((resultado)=> {
+        //      return(resultado.json);
+        //     })
+        //     .then((datos)=> {
+        //      console.log(datos)
+        //      for (i in datos.items){
+        //          console.log(datos.items[i]);
+        //          document.getElementById('productos').innerHTML += `
+        //          <div class="col">
+        //          <div class="card" style="width: 18rem;">
+        //              <img src="img/${datos.items[i].imagen}" class="card-img-top" alt="...">
+        //              <div class="card-body">
+        //                <ul>
+        //                <strong>ID</strong>: ${datos.product.id}
+        //                <li><strong>Nombre del Libro</strong>: ${datos.product.nombre}</li>
+        //                <li><strong>Autor</strong>: ${datos.product.autor}</li>
+        //                <li><strong>Stock</strong>: ${datos.product.cantidad}</li>
+        //                <li><strong>Precio $</strong>: ${datos.product.precio}</li>    <!-- ETIQUETA OFICIAL --> 
+        //                <li><strong>Editorial</strong>: ${datos.product.editorial}</li>
+        //                <li><strong>Fecha de Publicacion</strong>: ${product.fecha}</li>
+        //                <li><strong>Genero</strong>: ${product.genero}</li>
+        //                <li><strong>Descripcion</strong>: ${product.descripcion}</li>
+        //                </ul>
+        //                <div class="card-footer">
+        //                <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
+        //                <div>
+        //              </div>
+        //            </div>
+        //      </div>       
+        //         `
+             
+        
+        //      }
+        //     })
+        //     .catch(()=> {});//...
+        //     });
         
     }
     deleteProduct(element){
