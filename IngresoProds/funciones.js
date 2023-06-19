@@ -16,34 +16,35 @@ class Product{
 
 class UI {
     addProduct(product){
-        const productList = document.getElementById('product-list');
-        const element = document.createElement('div');
-        element.innerHTML = `   
-            <div class="col">
-                 <div class="card" style="width: 18rem;">
-                     <img src="img/${product.imagen}" class="card-img-top" alt="...">
-                     <div class="card-body">
-                       <ul>
-                       <strong>ID</strong>: ${product.id}
-                       <li><strong>Nombre del Libro</strong>: ${product.nombre}</li>
-                       <li><strong>Autor</strong>: ${product.autor}</li>
-                       <li><strong>Stock</strong>: ${product.cantidad}</li>
-                       <li><strong>Precio $</strong>: ${product.precio}</li>    <!-- ETIQUETA OFICIAL --> 
-                       <li><strong>Editorial</strong>: ${product.editorial}</li>
-                       <li><strong>Fecha de Publicacion</strong>: ${product.fecha}</li>
-                       <li><strong>Genero</strong>: ${product.genero}</li>
-                       <li><strong>Descripcion</strong>: ${product.descripcion}</li>
-                       </ul>
-                       <div class="card-footer">
-                       <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
-                       <div>
-                      </div>
+        const productList = document.getElementById('product-row');
+        const column = document.createElement('div');
+        column.className = 'col-md-4';
+        column.innerHTML = `   
+            <div class="card" style="width: 18rem;">
+                <img src="img/${product.imagen}" class="card-img-top" alt="...">
+                <div class="card-body overflow-y-scroll">
+                    <ul>
+                        <strong>ID</strong>: ${product.id}
+                        <li><strong>Nombre del Libro</strong>: ${product.nombre}</li>
+                        <li><strong>Autor</strong>: ${product.autor}</li>
+                        <li><strong>Stock</strong>: ${product.cantidad}</li>
+                        <li><strong>Precio $</strong>: ${product.precio}</li>    <!-- ETIQUETA OFICIAL --> 
+                        <li><strong>Editorial</strong>: ${product.editorial}</li>
+                        <li><strong>Fecha de Publicacion</strong>: ${product.fecha}</li>
+                        <li><strong>Genero</strong>: ${product.genero}</li>
+                        <li><strong>Descripcion</strong>: ${product.descripcion}</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
                     </div>
-              </div>
+                </div>
             </div>       
         `;
-        productList.appendChild(element);
+        productList.appendChild(column);
         this.resetForm();
+    
+
+
         // window.addEventListener('load', () => {
         //     fetch('https://g9cd7530b8a8613-ecommerce.adb.sa-santiago-1.oraclecloudapps.com/ords/inacap_ecommerce/libros_osores/')
         //     .then((resultado)=> {
